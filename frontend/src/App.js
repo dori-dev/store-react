@@ -4,11 +4,8 @@ import Footer from "./components/Footer/Footer";
 
 const App = () => {
   return (
-    <div>
+    <div className="container-fluid">
       <Header />
-      <div className="container">
-        <h2 className="btn btn-danger">Hello</h2>
-      </div>
       hello
       <Footer />
     </div>
