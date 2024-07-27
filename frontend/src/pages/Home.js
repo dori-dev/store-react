@@ -6,11 +6,11 @@ function Home() {
   return (
     <div>
       <h1>محصولات</h1>
-      <div class="container">
-        <div class="row">
+      <div className="container">
+        <div className="row">
           {products.map((item) => {
             return (
-              <div class="col col-12 col-sm-12 col-md-6 col-lg-4">
+              <div className="col col-12 col-sm-12 col-md-6 col-lg-4" key={item._id}>
                 <Product product={item} />
               </div>
             );
