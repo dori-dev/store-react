@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 
@@ -7,11 +8,15 @@ import Footer from "./components/Footer/Footer";
 
 const App = () => {
   return (
-    <div className="container-fluid">
+    <Router>
       <Header />
-      <Home />
+      <div className="container-fluid">
+        <Routes>
+          <Route path="/" element={<Home />} exact />
+        </Routes>
+      </div>
       <Footer />
-    </div>
+    </Router>
   );
 };
 
