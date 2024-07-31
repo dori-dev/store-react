@@ -1,13 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
   return (
     <div className="card my-3" style={{ width: "18rem" }}>
-      <a href={`/product/${product._id}`}>
+      <Link to={`/product/${product._id}`}>
         <img src={product.image} className="card-img-top" alt={product.name} />
-      </a>
+      </Link>
       <div className="card-body">
-        <h5>{product.name}</h5>
+        <Link to={`/product/${product._id}`}>
+          <h5>{product.name}</h5>
+        </Link>
         <p className="card-text">{product.description}</p>
       </div>
       <ul className="list-group list-group-flush">

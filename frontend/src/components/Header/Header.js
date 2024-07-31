@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a className="navbar-brand" href="/">
-        Navbar
-      </a>
+      <Link className="navbar-brand ps-2" to="/">
+        Home
+      </Link>
       <button
         aria-controls="navbarNav"
         aria-expanded="false"
@@ -20,27 +21,20 @@ const Header = () => {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
           <li className="nav-item active">
-            <a className="nav-link" href="/">
-              Home{" "}
-              <span className="sr-only">
+            <Link className="nav-link" to="/cart">
+              Cart
+              <span className="ps-1">
                 <i className="fa fa-shopping-cart"></i>
               </span>
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/">
-              Features
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/">
-              Pricing
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link disabled" href="/">
-              Disabled
-            </a>
+            <Link className="nav-link" to="/account">
+              Account
+              <span className="ps-1">
+                <i className="fa fa-user"></i>
+              </span>
+            </Link>
           </li>
         </ul>
       </div>
