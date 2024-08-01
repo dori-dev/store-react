@@ -11,7 +11,6 @@ const Product = ({ product }) => {
         <Link to={`/product/${product._id}`}>
           <h5>{product.name}</h5>
         </Link>
-        <p className="card-text">{product.description}</p>
       </div>
       <ul className="list-group list-group-flush">
         <li className="list-group-item">

@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import products from "../products";
+import axios from "axios";
 
 const Product = () => {
   const { id } = useParams();
-  const product = products.find((item) => {
-    return item._id === id;
-  });
+
+  const [product, setProduct] = useState({});
+
+  useEffect(() => {
+    const sendRequest = async () => {
+      const response = await axios.get(
+        `http://localhost:8000/api/products/${id}`
+      );
+      setProduct(response.data);
+    };
+    sendRequest();
+  }, [id]);
+
   return (
     <div>
       <Link to="/" className="btn btn-light my-3">
