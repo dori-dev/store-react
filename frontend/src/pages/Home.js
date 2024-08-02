@@ -6,9 +6,9 @@ import { productListAction } from "../action/productAction";
 
 function Home() {
   const dispatch = useDispatch();
-  const [loading, products] = useSelector((state) => state.productList);
+  const { loading, products } = useSelector((state) => state.productList);
   useEffect(() => {
-    dispatch(productListAction);
+    dispatch(productListAction());
   }, [dispatch]);
 
   return (
