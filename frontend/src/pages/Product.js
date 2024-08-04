@@ -1,16 +1,22 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { productDetailAction } from "../action/productAction";
 
 const Product = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { loading, product } = useSelector((state) => state.productDetail);
   useEffect(() => {
     dispatch(productDetailAction(id));
   }, [id, dispatch]);
+
+  const addToCartHandler = () => {
+    navigate(`/cart/${id}`);
+  };
 
   return (
     <div>
@@ -36,7 +42,11 @@ const Product = () => {
           </div>
           <div className="col-1"></div>
           <div className="col-3">
-            <button type="button" className="btn btn-primary btn-block">
+            <button
+              onClick={addToCartHandler}
+              type="button"
+              className="btn btn-primary btn-block"
+            >
               افزودن به سبد خرید
             </button>
           </div>
