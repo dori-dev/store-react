@@ -56,7 +56,17 @@ const Cart = () => {
             </ul>
           )}
         </div>
-        <div className="col-4">One of two columns</div>
+        <div className="col-4">
+          <div className="card" style={{ width: "18rem" }}>
+            <ul className="list-group list-group-flush">
+              <li className="list-group-item">مجموع کل سبد خرید</li>
+              <li className="list-group-item">
+                {cartItems.reduce((acc, item) => acc + item.price, 0)}
+                <span className="ps-1">تومان</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );
