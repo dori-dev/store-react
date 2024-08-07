@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
-import { addToCart } from "../action/cartAction";
+import { addToCart, removeFromCart } from "../action/cartAction";
 
 const Cart = () => {
   const { id } = useParams();
@@ -17,7 +17,7 @@ const Cart = () => {
   }, [id, dispatch]);
 
   const removeFromCartHandler = (id) => {
-    console.log(id);
+    dispatch(removeFromCart(id))
   };
 
   return (
